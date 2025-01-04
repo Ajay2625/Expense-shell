@@ -31,7 +31,7 @@ CHECK_ROOT(){
 
 CHECK_ROOT
 
-echo "Script executing started at :$TIMESTAMP &>>$LOG_FILE_NAME
+echo "Script executing started at :$TIMESTAMP" &>>$LOG_FILE_NAME
 
 dnf install mysql-server -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing Mysql"
