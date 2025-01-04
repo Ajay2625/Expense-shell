@@ -10,12 +10,13 @@ N="\e[0m"
 FILE_FOLDER_NAME="/var/log/Expense-shell"
 FILE_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$FILE_FOLDER_NAME/$FILE_NAME/$TIMESTAMP.log"
+LOG_FILE_NAME="$FILE_FOLDER_NAME/$FILE_NAME-$TIMESTAMP.log"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e "$2 is $R FAILURE $Y"
+        exit 1
     else
         echo -e "$2 is $G SUCCESS $Y"
     fi
