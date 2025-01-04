@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-FILE_FOLDER_NAME="/var/log/expense-shell"
+FILE_FOLDER_NAME="/var/log/Expense-shell"
 FILE_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$FILE_FOLDER_NAME/$FILE_NAME/$TIMESTAMP.log"
