@@ -42,13 +42,15 @@ useradd expense
 VALIDATE $? "User Added"
 mkdir /app
 VALIDATE $? "/app folder created"
-curl curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "Downloading the code zip file into /tmp folder"
-cd /app/
+cd /app
 VALIDATE $? "change directory to /app/ folder"
-unzip /tmp/backend.zip
+unzip /tmp/backend.zip &>>$LOG_FILE_NAME
 VALIDATE $? "unzipping backend"
-npm install
+dnf install npm -y &>>$LOG_FILE_NAME
+VALIDATE $? "NPM Installing Success"
+npm install &>>$LOG_FILE_NAME
 VALIDATE $? "NPM install command"
 
 cp /home/ec2-user/Expense-shell/backend.service /etc/systemd/system/backend.service
