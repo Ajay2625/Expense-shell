@@ -49,7 +49,7 @@ cd /usr/share/nginx/html/
 VALIDATE $? "change directory "
 
 unzip /tmp/frontend.zip
-VALIDATE $? "Unzipping "
+VALIDATE $? "Unzipping"
 
 cp /home/ec2-user/Expense-shell/expense.conf /etc/nginx/default.d/expense.conf
 
